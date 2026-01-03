@@ -4,7 +4,17 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
+    // Для GitHub Pages используем имя репозитория как base
+    // Репозиторий: website_dom_ojca, поэтому base будет "/website_dom_ojca/"
+    // Для корневого домена используйте base: '/'
+    const base = process.env.GITHUB_REPOSITORY 
+      ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/`
+      : process.env.GITHUB_ACTIONS
+      ? '/website_dom_ojca/'
+      : '/';
+    
     return {
+      base: base,
       server: {
         port: 3000,
         host: '0.0.0.0',

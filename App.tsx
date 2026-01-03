@@ -50,10 +50,10 @@ function App() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 md:py-0">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <img 
-            src="components/images/imgWroclaw.png" 
-            alt="Church Worship" 
-            className="w-full h-full object-cover"
+            <img 
+              src="./components/images/imgWroclaw.png" 
+              alt="Wrocław Panorama"
+              className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-church-dark/90 dark:to-church-darker"></div>
         </div>
