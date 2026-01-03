@@ -1,0 +1,252 @@
+import { Language } from './types';
+
+export const translations = {
+  pl: {
+    nav: {
+      home: 'Start',
+      about: 'O nas',
+      sermons: 'Kazania',
+      events: 'Wydarzenia',
+      contact: 'Kontakt',
+    },
+    hero: {
+      welcome: 'Witaj w',
+      churchName: 'Domu Ojca',
+      subtitle: 'Miejsce, gdzie każdy jest mile widziany. Odkryj wspólnotę, znajdź nadzieję i poznaj Boga.',
+      joinUs: 'Dołącz do nas',
+      watchOnline: 'Oglądaj online',
+    },
+    service: {
+      invite: 'Zapraszamy w Niedzielę',
+      subInvite: 'Przyjdź i bądź częścią naszej rodziny.',
+      mainService: 'Nabożeństwo Główne',
+    },
+    ministries: {
+      forEveryone: 'Dla każdego',
+      ourMinistries: 'Nasze Służby',
+    },
+    sermons: {
+      teaching: 'Nauczanie',
+      latest: 'Ostatnie Kazania',
+      archive: 'Zobacz archiwum',
+      watchAll: 'Zobacz wszystkie',
+      mainTitle: 'Archiwum Kazań',
+      subTitle: 'Posłuchaj Słowa Bożego gdziekolwiek jesteś.',
+    },
+    events: {
+      title: 'Nadchodzące Wydarzenia',
+      subTitle: 'Sprawdź co dzieje się w naszej społeczności w najbliższym czasie.',
+    },
+    contact: {
+      title: 'Skontaktuj się z nami',
+      subTitle: 'Masz pytania? Potrzebujesz modlitwy? Jesteśmy tutaj dla Ciebie.',
+      address: 'Adres',
+      office: 'Biuro Kościoła',
+      hours: 'Wtorek - Piątek',
+      nameLabel: 'Imię i Nazwisko',
+      messageLabel: 'Wiadomość',
+      sendButton: 'Wyślij wiadomość',
+    },
+    about: {
+      title: 'O Nas',
+      description: 'Kościół Dom Ojca we Wrocławiu to społeczność ludzi, którzy odkryli miłość Boga Ojca i chcą dzielić się nią z innymi. Wierzymy, że kościół to nie budynek, ale rodzina.',
+      visionTitle: 'Nasza Wizja',
+      visionDesc: 'Pragniemy widzieć Wrocław przemieniony mocą Ewangelii. Chcemy być miejscem uzdrowienia, wzrostu i wyposażenia dla każdego, kto szuka sensu i celu w życiu.',
+      leadersTitle: 'Nasi Liderzy',
+      leadersDesc: 'Kościół prowadzony jest przez zespół starszych, których pasją jest służenie Bogu i ludziom. Stawiamy na autentyczność, biblijne nauczanie i otwartość na działanie Ducha Świętego.',
+    },
+    footer: {
+      description: 'Miejsce, gdzie każdy może odnaleźć swoje miejsce, spotkać Boga i zbudować prawdziwe relacje.',
+      shortcuts: 'Na skróty',
+      groups: 'Grupy Domowe',
+      support: 'Wsparcie',
+      rights: 'Wszelkie prawa zastrzeżone.',
+    }
+  },
+  ua: {
+    nav: {
+      home: 'Головна',
+      about: 'Про нас',
+      sermons: 'Проповіді',
+      events: 'Події',
+      contact: 'Контакт',
+    },
+    hero: {
+      welcome: 'Ласкаво просимо до',
+      churchName: 'Дому Отця',
+      subtitle: 'Місце, де кожному раді. Відкрий для себе спільноту, знайди надію та пізнай Бога.',
+      joinUs: 'Приєднуйся',
+      watchOnline: 'Дивитись онлайн',
+    },
+    service: {
+      invite: 'Запрошуємо в Неділю',
+      subInvite: 'Приходь і стань частиною нашої сім’ї.',
+      mainService: 'Головні Богослужіння',
+    },
+    ministries: {
+      forEveryone: 'Для кожного',
+      ourMinistries: 'Наші Служіння',
+    },
+    sermons: {
+      teaching: 'Вчення',
+      latest: 'Останні Проповіді',
+      archive: 'Архів',
+      watchAll: 'Дивитись всі',
+      mainTitle: 'Архів Проповідей',
+      subTitle: 'Слухай Слово Боже де б ти не був.',
+    },
+    events: {
+      title: 'Найближчі Події',
+      subTitle: 'Дізнайся, що відбувається в нашій спільноті найближчим часом.',
+    },
+    contact: {
+      title: 'Зв\'яжіться з нами',
+      subTitle: 'Маєте питання? Потребуєте молитви? Ми тут для вас.',
+      address: 'Адреса',
+      office: 'Офіс Церкви',
+      hours: 'Вівторок - П\'ятниця',
+      nameLabel: 'Ім\'я та Прізвище',
+      messageLabel: 'Повідомлення',
+      sendButton: 'Надіслати повідомлення',
+    },
+    about: {
+      title: 'Про Нас',
+      description: 'Церква Дім Отця у Вроцлаві - це спільнота людей, які відкрили любов Бога Отця і хочуть ділитися нею з іншими. Ми віримо, що церква - це не будівля, а сім\'я.',
+      visionTitle: 'Наше Бачення',
+      visionDesc: 'Ми прагнемо бачити Вроцлав переміненим силою Євангелія. Хочемо бути місцем зцілення, зростання та спорядження для кожного, хто шукає сенс життя.',
+      leadersTitle: 'Наші Лідери',
+      leadersDesc: 'Церква ведеться командою старійшин, пристрастю яких є служіння Богу і людям. Ми цінуємо автентичність, біблійне вчення та відкритість до дії Святого Духа.',
+    },
+    footer: {
+      description: 'Місце, де кожен може знайти своє місце, зустріти Бога та побудувати справжні стосунки.',
+      shortcuts: 'Швидкі посилання',
+      groups: 'Домашні Групи',
+      support: 'Підтримка',
+      rights: 'Всі права захищені.',
+    }
+  },
+  be: {
+    nav: {
+      home: 'Галоўная',
+      about: 'Пра нас',
+      sermons: 'Пропаведзі',
+      events: 'Падзеі',
+      contact: 'Кантакты',
+    },
+    hero: {
+      welcome: 'Сардэчна запрашаем у',
+      churchName: 'Дом Айца',
+      subtitle: 'Месца, дзе кожнаму рады. Адкрый для сябе супольнасць, знайдзі надзею і спазнай Бога.',
+      joinUs: 'Далучайся да нас',
+      watchOnline: 'Глядзець анлайн',
+    },
+    service: {
+      invite: 'Запрашаем у Нядзелю',
+      subInvite: 'Прыходзь і стань часткай нашай сям\'і.',
+      mainService: 'Галоўныя Набажэнствы',
+    },
+    ministries: {
+      forEveryone: 'Для кожнага',
+      ourMinistries: 'Нашы Служэнні',
+    },
+    sermons: {
+      teaching: 'Вучэнне',
+      latest: 'Апошнія Пропаведзі',
+      archive: 'Глядзець архіў',
+      watchAll: 'Глядзець усе',
+      mainTitle: 'Архіў Пропаведзяў',
+      subTitle: 'Слухай Слова Божае дзе б ты ні быў.',
+    },
+    events: {
+      title: 'Бліжэйшыя Падзеі',
+      subTitle: 'Даведайся, што адбываецца ў нашай супольнасці ў бліжэйшы час.',
+    },
+    contact: {
+      title: 'Звяжыцеся з намі',
+      subTitle: 'Ёсць пытанні? Патрэбна малітва? Мы тут для вас.',
+      address: 'Адрас',
+      office: 'Офіс Царквы',
+      hours: 'Аўторак - Пятніца',
+      nameLabel: 'Імя і Прозвішча',
+      messageLabel: 'Паведамленне',
+      sendButton: 'Адправіць паведамленне',
+    },
+    about: {
+      title: 'Пра Нас',
+      description: 'Царква Дом Айца ва Уроцлаве - гэта супольнасць людзей, якія адкрылі любоў Бога Айца і хочуць дзяліцца ёю з іншымі. Мы верым, што царква - гэта не будынак, а сям\'я.',
+      visionTitle: 'Наша Бачанне',
+      visionDesc: 'Мы прагнем бачыць Уроцлаў перамененым сілай Евангелля. Хочам быць месцам аздараўлення, росту і падрыхтоўкі для кожнага, хто шукае сэнс жыцця.',
+      leadersTitle: 'Нашы Лідары',
+      leadersDesc: 'Царква кіруецца камандай старэйшын, запалам якіх з\'яўляецца служэнне Богу і людзям. Мы цэнім сапраўднасць, біблейскае вучэнне і адкрытасць да дзеяння Духа Святога.',
+    },
+    footer: {
+      description: 'Месца, дзе кожны можа знайсці сваё месца, сустрэць Бога і пабудаваць сапраўдныя адносіны.',
+      shortcuts: 'Спасылкі',
+      groups: 'Дамашнія Групы',
+      support: 'Падтрымка',
+      rights: 'Усе правы абаронены.',
+    }
+  },
+  ru: {
+    nav: {
+      home: 'Главная',
+      about: 'О нас',
+      sermons: 'Проповеди',
+      events: 'События',
+      contact: 'Контакты',
+    },
+    hero: {
+      welcome: 'Добро пожаловать в',
+      churchName: 'Дом Отца',
+      subtitle: 'Место, где каждому рады. Открой для себя сообщество, найди надежду и познай Бога.',
+      joinUs: 'Присоединяйся',
+      watchOnline: 'Смотреть онлайн',
+    },
+    service: {
+      invite: 'Приглашаем в Воскресенье',
+      subInvite: 'Приходи и стань частью нашей семьи.',
+      mainService: 'Главные Богослужения',
+    },
+    ministries: {
+      forEveryone: 'Для каждого',
+      ourMinistries: 'Наши Служения',
+    },
+    sermons: {
+      teaching: 'Учение',
+      latest: 'Последние Проповеди',
+      archive: 'Смотреть архив',
+      watchAll: 'Смотреть все',
+      mainTitle: 'Архив Проповедей',
+      subTitle: 'Слушай Слово Божье где бы ты ни был.',
+    },
+    events: {
+      title: 'Ближайшие События',
+      subTitle: 'Узнай, что происходит в нашем сообществе в ближайшее время.',
+    },
+    contact: {
+      title: 'Свяжитесь с нами',
+      subTitle: 'Есть вопросы? Нужна молитва? Мы здесь для вас.',
+      address: 'Адрес',
+      office: 'Офис Церкви',
+      hours: 'Вторник - Пятница',
+      nameLabel: 'Имя и Фамилия',
+      messageLabel: 'Сообщение',
+      sendButton: 'Отправить сообщение',
+    },
+    about: {
+      title: 'О Нас',
+      description: 'Церковь Дом Отца во Вроцлаве - это сообщество людей, которые открыли любовь Бога Отца и хотят делиться ею с другими. Мы верим, что церковь - это не здание, а семья.',
+      visionTitle: 'Наше Видение',
+      visionDesc: 'Мы жаждем видеть Вроцлав преображенным силой Евангелия. Хотим быть местом исцеления, роста и снаряжения для каждого, кто ищет смысл жизни.',
+      leadersTitle: 'Наши Лидеры',
+      leadersDesc: 'Церковь ведется командой старейшин, страстью которых является служение Богу и людям. Мы ценим подлинность, библейское учение и открытость к действию Святого Духа.',
+    },
+    footer: {
+      description: 'Место, где каждый может найти свое место, встретить Бога и построить настоящие отношения.',
+      shortcuts: 'Быстрые ссылки',
+      groups: 'Домашние Группы',
+      support: 'Поддержка',
+      rights: 'Все права защищены.',
+    }
+  }
+};
