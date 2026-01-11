@@ -41,6 +41,7 @@ const Navigation: React.FC<NavigationProps> = ({
     { label: t.sermons, value: PageView.SERMONS },
     { label: t.events, value: PageView.EVENTS },
     { label: t.contact, value: PageView.CONTACT },
+    { label: t.donation, value: PageView.DONATION },
   ];
 
   const languages: { code: Language; label: string }[] = [

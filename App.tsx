@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import ChatAssistant from './components/ChatAssistant';
+import DonationPage from './components/DonationPage';
 import { PageView, Language } from './types';
 import { getUpcomingEvents, getLatestSermons, getMinistries } from './constants';
 import { Calendar, Clock, MapPin, Play, ArrowRight, Heart, Users, Flame, HandHeart } from 'lucide-react';
@@ -51,7 +52,7 @@ function App() {
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
             <img 
-              src="./components/images/imgWroclaw.png" 
+              src={`${(import.meta as any).env?.BASE_URL || '/'}components/images/imgWroclaw.png`}
               alt="Wrocław Panorama"
               className="w-full h-full object-cover"
           />
@@ -332,6 +333,8 @@ function App() {
             </div>
           </div>
          );
+      case PageView.DONATION:
+        return <DonationPage language={language} />;
       default:
         return renderHome();
     }

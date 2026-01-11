@@ -34,7 +34,8 @@ export enum PageView {
   ABOUT = 'ABOUT',
   SERMONS = 'SERMONS',
   EVENTS = 'EVENTS',
-  CONTACT = 'CONTACT'
+  CONTACT = 'CONTACT',
+  DONATION = 'DONATION'
 }
 
 export type Language = 'pl' | 'be' | 'ua' | 'ru';

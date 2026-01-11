@@ -8,6 +8,7 @@ export const translations = {
       sermons: 'Kazania',
       events: 'Wydarzenia',
       contact: 'Kontakt',
+      donation: 'Wsparcie',
     },
     hero: {
       welcome: 'Witaj w',
@@ -61,6 +62,22 @@ export const translations = {
       groups: 'Grupy Domowe',
       support: 'Wsparcie',
       rights: 'Wszelkie prawa zastrzeżone.',
+    },
+    donation: {
+      title: 'Wsparcie Domu Ojca',
+      subtitle: 'Twoje wsparcie pomaga nam budować wspólnotę i służyć Wrocławiowi',
+      description: 'Każda darowizna, niezależnie od kwoty, ma ogromne znaczenie dla naszej misji. Dzięki Twojemu wsparciu możemy kontynuować służbę i rozwijać naszą wspólnotę.',
+      methods: 'Metody płatności',
+      bankTransfer: 'Przelew bankowy',
+      bankDetails: 'Szczegóły konta',
+      accountNumber: 'Numer konta',
+      accountName: 'Nazwa odbiorcy',
+      swift: 'SWIFT',
+      purpose: 'Tytuł przelewu',
+      qrCode: 'Kod QR do przelewu',
+      onlinePayment: 'Płatność online',
+      thankYou: 'Dziękujemy za Twoje wsparcie!',
+      verse: '"Każdy niech daje tak, jak postanowił w sercu, nie z żalem ani z przymusu; albowiem radosnego dawcę miłuje Bóg." - 2 Koryntian 9:7'
     }
   },
   ua: {
@@ -70,6 +87,7 @@ export const translations = {
       sermons: 'Проповіді',
       events: 'Події',
       contact: 'Контакт',
+      donation: 'Підтримка',
     },
     hero: {
       welcome: 'Ласкаво просимо до',
@@ -123,6 +141,22 @@ export const translations = {
       groups: 'Домашні Групи',
       support: 'Підтримка',
       rights: 'Всі права захищені.',
+    },
+    donation: {
+      title: 'Підтримка Дому Отця',
+      subtitle: 'Ваша підтримка допомагає нам будувати спільноту та служити Вроцлаву',
+      description: 'Кожен внесок, незалежно від суми, має величезне значення для нашої місії. Завдяки вашій підтримці ми можемо продовжувати служіння та розвивати нашу спільноту.',
+      methods: 'Методи оплати',
+      bankTransfer: 'Банківський переказ',
+      bankDetails: 'Реквізити рахунку',
+      accountNumber: 'Номер рахунку',
+      accountName: 'Назва отримувача',
+      swift: 'SWIFT',
+      purpose: 'Призначення платежу',
+      qrCode: 'QR-код для переказу',
+      onlinePayment: 'Онлайн оплата',
+      thankYou: 'Дякуємо за вашу підтримку!',
+      verse: '"Кожен нехай дає так, як вирішив у серці, не з жалем або з примусу; бо радісного давача любить Бог." - 2 Коринтян 9:7'
     }
   },
   be: {
@@ -132,6 +166,7 @@ export const translations = {
       sermons: 'Пропаведзі',
       events: 'Падзеі',
       contact: 'Кантакты',
+      donation: 'Падтрымка',
     },
     hero: {
       welcome: 'Сардэчна запрашаем у',
@@ -185,6 +220,22 @@ export const translations = {
       groups: 'Дамашнія Групы',
       support: 'Падтрымка',
       rights: 'Усе правы абаронены.',
+    },
+    donation: {
+      title: 'Падтрымка Дому Айца',
+      subtitle: 'Ваша падтрымка дапамагае нам будаваць супольнасць і служыць Уроцлаву',
+      description: 'Кожны ўнёсак, незалежна ад сумы, мае велізарнае значэнне для нашай місіі. Дзякуючы вашай падтрымцы мы можам працягваць служэнне і развіваць нашу супольнасць.',
+      methods: 'Метады аплаты',
+      bankTransfer: 'Банкаўскі перавод',
+      bankDetails: 'Рэквізіты рахунку',
+      accountNumber: 'Нумар рахунку',
+      accountName: 'Назва атрымальніка',
+      swift: 'SWIFT',
+      purpose: 'Прызначэнне плацяжу',
+      qrCode: 'QR-код для пераводу',
+      onlinePayment: 'Анлайн аплата',
+      thankYou: 'Дзякуем за вашу падтрымку!',
+      verse: '"Кожны няхай дае так, як вырашыў у сэрцы, не з жалем або з прымусу; бо радаснага давальніка любіць Бог." - 2 Карынцянам 9:7'
     }
   },
   ru: {
@@ -194,6 +245,7 @@ export const translations = {
       sermons: 'Проповеди',
       events: 'События',
       contact: 'Контакты',
+      donation: 'Поддержка',
     },
     hero: {
       welcome: 'Добро пожаловать в',
@@ -247,6 +299,22 @@ export const translations = {
       groups: 'Домашние Группы',
       support: 'Поддержка',
       rights: 'Все права защищены.',
+    },
+    donation: {
+      title: 'Поддержка Дома Отца',
+      subtitle: 'Ваша поддержка помогает нам строить сообщество и служить Вроцлаву',
+      description: 'Каждый взнос, независимо от суммы, имеет огромное значение для нашей миссии. Благодаря вашей поддержке мы можем продолжать служение и развивать наше сообщество.',
+      methods: 'Методы оплаты',
+      bankTransfer: 'Банковский перевод',
+      bankDetails: 'Реквизиты счета',
+      accountNumber: 'Номер счета',
+      accountName: 'Название получателя',
+      swift: 'SWIFT',
+      purpose: 'Назначение платежа',
+      qrCode: 'QR-код для перевода',
+      onlinePayment: 'Онлайн оплата',
+      thankYou: 'Спасибо за вашу поддержку!',
+      verse: '"Каждый уделяй по расположению сердца, не с огорчением и не с принуждением; ибо доброхотно дающего любит Бог." - 2 Коринфянам 9:7'
     }
   }
 };
