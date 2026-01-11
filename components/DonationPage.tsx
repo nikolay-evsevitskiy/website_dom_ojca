@@ -9,17 +9,19 @@ interface DonationPageProps {
 
 const DonationPage: React.FC<DonationPageProps> = ({ language }) => {
   const t = translations[language].donation;
-  const [copied, setCopied] = React.useState(false);
+  const [copied1, setCopied1] = React.useState(false);
+  const [copied2, setCopied2] = React.useState(false);
+  const [copied3, setCopied3] = React.useState(false);
 
   // Данные банковского счета (можно вынести в константы)
   const bankAccount = {
-    number: '12 3456 7890 1234 5678 9012 3456',
-    name: 'Kościół Dom Ojca',
-    swift: 'BPKOPLPW',
+    number: '96 2530 0008 2056 1056 5283 0001',
+    name: `Kościoł Chrześcijański "Dom Ojca" we Wrocławiu`,
+    // swift: 'BPKOPLPW',
     purpose: 'Darowizna na działalność kościoła'
   };
 
-  const copyToClipboard = (text: string) => {
+  const copyToClipboard = (text: string, setCopied: (copied: boolean) => void) => {
     navigator.clipboard.writeText(text).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
@@ -76,11 +78,11 @@ const DonationPage: React.FC<DonationPageProps> = ({ language }) => {
                   className="flex-1 px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white font-mono text-lg"
                 />
                 <button
-                  onClick={() => copyToClipboard(bankAccount.number)}
+                  onClick={() => copyToClipboard(bankAccount.number, setCopied1)}
                   className="p-3 bg-gold-500 hover:bg-gold-600 text-white rounded-lg transition-colors"
                   title="Kopiuj"
                 >
-                  {copied ? (
+                  {copied1 ? (
                     <CheckCircle className="w-5 h-5" />
                   ) : (
                     <Copy className="w-5 h-5" />
@@ -101,10 +103,10 @@ const DonationPage: React.FC<DonationPageProps> = ({ language }) => {
                   className="flex-1 px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white"
                 />
                 <button
-                  onClick={() => copyToClipboard(bankAccount.name)}
+                  onClick={() => copyToClipboard(bankAccount.name, setCopied2)}
                   className="p-3 bg-gold-500 hover:bg-gold-600 text-white rounded-lg transition-colors"
                 >
-                  {copied ? (
+                  {copied2 ? (
                     <CheckCircle className="w-5 h-5" />
                   ) : (
                     <Copy className="w-5 h-5" />
@@ -113,7 +115,7 @@ const DonationPage: React.FC<DonationPageProps> = ({ language }) => {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
                 SWIFT
               </label>
@@ -135,7 +137,7 @@ const DonationPage: React.FC<DonationPageProps> = ({ language }) => {
                   )}
                 </button>
               </div>
-            </div>
+            </div> */}
 
             <div>
               <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
@@ -149,10 +151,10 @@ const DonationPage: React.FC<DonationPageProps> = ({ language }) => {
                   className="flex-1 px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white"
                 />
                 <button
-                  onClick={() => copyToClipboard(bankAccount.purpose)}
+                  onClick={() => copyToClipboard(bankAccount.purpose, setCopied3)}
                   className="p-3 bg-gold-500 hover:bg-gold-600 text-white rounded-lg transition-colors"
                 >
-                  {copied ? (
+                  {copied3 ? (
                     <CheckCircle className="w-5 h-5" />
                   ) : (
                     <Copy className="w-5 h-5" />

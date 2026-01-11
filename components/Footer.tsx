@@ -47,7 +47,7 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
             <ul className="space-y-3 text-gray-300">
               <li className="flex items-start gap-3">
                 <MapPin size={18} className="mt-1 text-gold-500" />
-                <span>ul. Legnicka 65<br/>54-204 Wrocław</span>
+                <span>ul. Sołtysowicka 62A<br/>51-168 Wrocław</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-gold-500" />
@@ -64,13 +64,13 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
           <div>
             <h3 className="text-gold-500 font-semibold mb-4 uppercase tracking-wider text-sm">Social Media</h3>
             <div className="flex space-x-4">
-              <a href="#" className="bg-gray-800 dark:bg-gray-900 p-2 rounded-full hover:bg-gold-500 hover:text-white transition-all">
+              {/* <a href="#" className="bg-gray-800 dark:bg-gray-900 p-2 rounded-full hover:bg-gold-500 hover:text-white transition-all">
                 <Facebook size={20} />
-              </a>
-              <a href="#" className="bg-gray-800 dark:bg-gray-900 p-2 rounded-full hover:bg-gold-500 hover:text-white transition-all">
+              </a> */}
+              <a href="https://www.instagram.com/domojca.wroclaw/" className="bg-gray-800 dark:bg-gray-900 p-2 rounded-full hover:bg-gold-500 hover:text-white transition-all">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="bg-gray-800 dark:bg-gray-900 p-2 rounded-full hover:bg-gold-500 hover:text-white transition-all">
+              <a href="https://www.youtube.com/@DomOjca-Wroclaw" className="bg-gray-800 dark:bg-gray-900 p-2 rounded-full hover:bg-gold-500 hover:text-white transition-all">
                 <Youtube size={20} />
               </a>
             </div>
