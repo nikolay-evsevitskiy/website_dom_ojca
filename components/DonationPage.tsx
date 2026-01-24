@@ -1,32 +1,21 @@
 import React from 'react';
-import { Heart, CreditCard, Building2, Copy, CheckCircle } from 'lucide-react';
+import { Heart, CreditCard, Building2 } from 'lucide-react';
 import { Language } from '../types';
 import { translations } from '../translations';
+import { BANK_ACCOUNT } from '../constants/bankAccount';
+import { BankAccountField } from './ui/BankAccountField';
 
 interface DonationPageProps {
   language: Language;
 }
 
+/**
+ * DonationPage Component
+ * Follows SRP - single responsibility for donation page display
+ * Uses reusable components and hooks
+ */
 const DonationPage: React.FC<DonationPageProps> = ({ language }) => {
   const t = translations[language].donation;
-  const [copied1, setCopied1] = React.useState(false);
-  const [copied2, setCopied2] = React.useState(false);
-  const [copied3, setCopied3] = React.useState(false);
-
-  // Данные банковского счета (можно вынести в константы)
-  const bankAccount = {
-    number: '96 2530 0008 2056 1056 5283 0001',
-    name: `Kościoł Chrześcijański "Dom Ojca" we Wrocławiu`,
-    // swift: 'BPKOPLPW',
-    purpose: 'Darowizna na działalność kościoła'
-  };
-
-  const copyToClipboard = (text: string, setCopied: (copied: boolean) => void) => {
-    navigator.clipboard.writeText(text).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  };
 
   return (
     <div className="pt-32 pb-24 max-w-6xl mx-auto px-4 min-h-screen">
@@ -66,102 +55,19 @@ const DonationPage: React.FC<DonationPageProps> = ({ language }) => {
           </div>
 
           <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                {t.accountNumber}
-              </label>
-              <div className="flex items-center gap-2">
-                <input
-                  type="text"
-                  readOnly
-                  value={bankAccount.number}
-                  className="flex-1 px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white font-mono text-lg"
-                />
-                <button
-                  onClick={() => copyToClipboard(bankAccount.number, setCopied1)}
-                  className="p-3 bg-gold-500 hover:bg-gold-600 text-white rounded-lg transition-colors"
-                  title="Kopiuj"
-                >
-                  {copied1 ? (
-                    <CheckCircle className="w-5 h-5" />
-                  ) : (
-                    <Copy className="w-5 h-5" />
-                  )}
-                </button>
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                {t.accountName}
-              </label>
-              <div className="flex items-center gap-2">
-                <input
-                  type="text"
-                  readOnly
-                  value={bankAccount.name}
-                  className="flex-1 px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white"
-                />
-                <button
-                  onClick={() => copyToClipboard(bankAccount.name, setCopied2)}
-                  className="p-3 bg-gold-500 hover:bg-gold-600 text-white rounded-lg transition-colors"
-                >
-                  {copied2 ? (
-                    <CheckCircle className="w-5 h-5" />
-                  ) : (
-                    <Copy className="w-5 h-5" />
-                  )}
-                </button>
-              </div>
-            </div>
-
-            {/* <div>
-              <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                SWIFT
-              </label>
-              <div className="flex items-center gap-2">
-                <input
-                  type="text"
-                  readOnly
-                  value={bankAccount.swift}
-                  className="flex-1 px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white font-mono"
-                />
-                <button
-                  onClick={() => copyToClipboard(bankAccount.swift)}
-                  className="p-3 bg-gold-500 hover:bg-gold-600 text-white rounded-lg transition-colors"
-                >
-                  {copied ? (
-                    <CheckCircle className="w-5 h-5" />
-                  ) : (
-                    <Copy className="w-5 h-5" />
-                  )}
-                </button>
-              </div>
-            </div> */}
-
-            <div>
-              <label className="block text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
-                {t.purpose}
-              </label>
-              <div className="flex items-center gap-2">
-                <input
-                  type="text"
-                  readOnly
-                  value={bankAccount.purpose}
-                  className="flex-1 px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg text-gray-900 dark:text-white"
-                />
-                <button
-                  onClick={() => copyToClipboard(bankAccount.purpose, setCopied3)}
-                  className="p-3 bg-gold-500 hover:bg-gold-600 text-white rounded-lg transition-colors"
-                >
-                  {copied3 ? (
-                    <CheckCircle className="w-5 h-5" />
-                  ) : (
-                    <Copy className="w-5 h-5" />
-                  )}
-                </button>
-              </div>
-            </div>
+            <BankAccountField
+              label={t.accountNumber}
+              value={BANK_ACCOUNT.number}
+              isMonospace
+            />
+            <BankAccountField
+              label={t.accountName}
+              value={BANK_ACCOUNT.name}
+            />
+            <BankAccountField
+              label={t.purpose}
+              value={BANK_ACCOUNT.purpose}
+            />
           </div>
         </div>
 
@@ -178,30 +84,18 @@ const DonationPage: React.FC<DonationPageProps> = ({ language }) => {
 
           <div className="space-y-6">
             <p className="text-gray-600 dark:text-gray-300">
-              {language === 'pl' 
-                ? 'Możesz również dokonać płatności online za pomocą karty kredytowej lub debetowej.'
-                : language === 'ua'
-                ? 'Ви також можете здійснити онлайн платіж за допомогою кредитної або дебетової картки.'
-                : language === 'be'
-                ? 'Вы таксама можаце ажыццявіць анлайн плацёж з дапамогай крэдытнай або дэбетовай карткі.'
-                : 'Вы также можете осуществить онлайн платеж с помощью кредитной или дебетовой карты.'}
+              {t.onlinePaymentDesc}
             </p>
 
             <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 text-center">
               <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                {language === 'pl'
-                  ? 'Funkcja płatności online będzie dostępna wkrótce'
-                  : language === 'ua'
-                  ? 'Функція онлайн оплати буде доступна незабаром'
-                  : language === 'be'
-                  ? 'Функцыя анлайн аплаты будзе даступная хутка'
-                  : 'Функция онлайн оплаты будет доступна в ближайшее время'}
+                {t.onlinePaymentSoon}
               </p>
               <button
                 disabled
                 className="px-6 py-3 bg-gray-300 dark:bg-gray-600 text-gray-500 dark:text-gray-400 rounded-lg cursor-not-allowed"
               >
-                {language === 'pl' ? 'Wkrótce' : language === 'ua' ? 'Незабаром' : language === 'be' ? 'Хутка' : 'Скоро'}
+                {t.soon}
               </button>
             </div>
           </div>
