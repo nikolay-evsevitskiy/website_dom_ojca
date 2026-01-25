@@ -21,6 +21,11 @@ export const getUpcomingEvents = (lang: Language): Event[] => {
       1: { t: "Вечер Поклонения", d: "Время глубокой молитвы и музыки, где мы вместе ищем лица Бога." },
       2: { t: "Мужская Конференция 'Отвага'", d: "Событие на весь день для мужчин, желающих возрастать в вере." },
       3: { t: "Семейный Пикник", d: "Отличное время для всей семьи. Гриль, игры и развлечения для детей." }
+    },
+    en: {
+      1: { t: "Worship Evening", d: "A time of deep prayer and music where we seek God's face together." },
+      2: { t: "Men's Conference 'Courage'", d: "A full-day event for men who want to grow in faith." },
+      3: { t: "Family Picnic", d: "Great fun for the whole family. Grill, games and activities for children." }
     }
   }[lang];
 
@@ -57,7 +62,8 @@ export const getLatestSermons = (lang: Language): Sermon[] => {
     pl: ["Fundamenty Wiary: Tożsamość", "Jak słyszeć głos Boga?", "Moc Przebaczenia"],
     ua: ["Фундаменти Віри: Ідентичність", "Як чути голос Бога?", "Сила Прощення"],
     be: ["Падмуркі Веры: Тоеснасць", "Як чуць голас Бога?", "Моц Прабачэння"],
-    ru: ["Фундаменты Веры: Идентичность", "Как слышать голос Бога?", "Сила Прощения"]
+    ru: ["Фундаменты Веры: Идентичность", "Как слышать голос Бога?", "Сила Прощения"],
+    en: ["Foundations of Faith: Identity", "How to Hear God's Voice?", "The Power of Forgiveness"]
   }[lang];
 
   return [
@@ -113,6 +119,12 @@ export const getMinistries = (lang: Language) => {
       2: { t: "Молодежь", d: "Энергичные встречи для подростков." },
       3: { t: "Домашние Группы", d: "Построение отношений в малых группах." },
       4: { t: "Служение Бедным", d: "Помощь самым нуждающимся." }
+    },
+    en: {
+      1: { t: "For Children", d: "A safe place for the little ones." },
+      2: { t: "Youth", d: "Energetic meetings for teenagers." },
+      3: { t: "Home Groups", d: "Building relationships in smaller groups." },
+      4: { t: "Serving the Poor", d: "Help for those most in need." }
     }
   }[lang];
 

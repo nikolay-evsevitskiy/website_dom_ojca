@@ -38,4 +38,4 @@ export enum PageView {
   DONATION = 'DONATION'
 }
 
-export type Language = 'pl' | 'be' | 'ua' | 'ru';
+export type Language = 'pl' | 'be' | 'ua' | 'ru' | 'en';

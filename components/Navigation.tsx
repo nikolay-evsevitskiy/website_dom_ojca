@@ -46,6 +46,7 @@ const Navigation: React.FC<NavigationProps> = ({
 
   const languages: { code: Language; label: string }[] = [
     { code: 'pl', label: 'PL' },
+    { code: 'en', label: 'EN' },
     { code: 'be', label: 'BE' },
     { code: 'ua', label: 'UA' },
     { code: 'ru', label: 'RU' },

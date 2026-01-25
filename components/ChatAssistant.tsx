@@ -17,6 +17,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ language }) => {
   // Reset chat when language changes or initialize
   useEffect(() => {
     let welcomeText = 'Szczęść Boże! Witaj w Domu Ojca. W czym mogę Ci dzisiaj pomóc?';
+    if (language === 'en') welcomeText = 'God bless! Welcome to Father\'s House. How can I help you today?';
     if (language === 'ua') welcomeText = 'Слава Богу! Ласкаво просимо. Чим можу допомогти?';
     if (language === 'be') welcomeText = 'Слава Богу! Вітаем. Чым магу дапамагчы?';
     if (language === 'ru') welcomeText = 'Слава Богу! Добро пожаловать. Чем могу помочь?';
@@ -61,7 +62,14 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ language }) => {
       }));
 
       // Append language instruction
-      const prompt = `${input} (Please reply in ${language} language)`;
+      const languageNames: Record<Language, string> = {
+        pl: 'Polish',
+        en: 'English',
+        ua: 'Ukrainian',
+        be: 'Belarusian',
+        ru: 'Russian'
+      };
+      const prompt = `${input} (Please reply in ${languageNames[language]} language)`;
 
       const responseText = await sendMessageToGemini(history, prompt);
 
@@ -89,7 +97,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ language }) => {
       >
         <MessageCircle size={24} />
         <span className="font-medium hidden sm:inline">
-          {language === 'pl' ? 'Zapytaj asystenta' : 'Assistant'}
+          {language === 'pl' ? 'Zapytaj asystenta' : language === 'en' ? 'Ask Assistant' : 'Assistant'}
         </span>
       </button>
 
@@ -152,7 +160,7 @@ const ChatAssistant: React.FC<ChatAssistantProps> = ({ language }) => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-              placeholder={language === 'pl' ? "Zadaj pytanie..." : "..."}
+              placeholder={language === 'pl' ? "Zadaj pytanie..." : language === 'en' ? "Ask a question..." : "..."}
               className="flex-1 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-full px-4 py-2 focus:outline-none focus:border-gold-500 focus:ring-1 focus:ring-gold-500 transition-all placeholder-gray-400 dark:placeholder-gray-600"
             />
             <button
