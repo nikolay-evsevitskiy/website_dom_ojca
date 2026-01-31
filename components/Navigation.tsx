@@ -1,25 +1,25 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Globe, Moon, Sun } from 'lucide-react';
 import { Logo } from './Logo';
 import { PageView, Language } from '../types';
 import { translations } from '../translations';
+import { getPathFromPage } from '../routing/routes';
 
 interface NavigationProps {
   currentPage: PageView;
-  setPage: (page: PageView) => void;
   language: Language;
   setLanguage: (lang: Language) => void;
   isDarkMode: boolean;
   toggleTheme: () => void;
 }
 
-const Navigation: React.FC<NavigationProps> = ({ 
-  currentPage, 
-  setPage, 
-  language, 
+const Navigation: React.FC<NavigationProps> = ({
+  currentPage,
+  language,
   setLanguage,
   isDarkMode,
-  toggleTheme
+  toggleTheme,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -66,34 +66,31 @@ const Navigation: React.FC<NavigationProps> = ({
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div 
-            className="flex items-center cursor-pointer gap-3" 
-            onClick={() => setPage(PageView.HOME)}
-          >
+          <Link to={getPathFromPage(PageView.HOME)} className="flex items-center gap-3">
             <Logo className={`w-10 h-10 ${shouldHaveDarkText ? 'text-gold-500' : 'text-white'}`} />
             <span className={`font-serif text-xl font-bold tracking-wide ${
               shouldHaveDarkText ? 'text-gray-900 dark:text-white' : 'text-white'
             }`}>
               DOM OJCA
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.value}
-                onClick={() => setPage(link.value)}
+                to={getPathFromPage(link.value)}
                 className={`font-medium transition-colors duration-200 ${
                   currentPage === link.value
-                    ? 'text-gold-500' 
+                    ? 'text-gold-500'
                     : shouldHaveDarkText
-                      ? 'text-gray-700 dark:text-gray-300 hover:text-gold-500 dark:hover:text-gold-400' 
+                      ? 'text-gray-700 dark:text-gray-300 hover:text-gold-500 dark:hover:text-gold-400'
                       : 'text-white/90 hover:text-white'
                 }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
 
             {/* Language Selector */}
@@ -163,12 +160,10 @@ const Navigation: React.FC<NavigationProps> = ({
         <div className="md:hidden bg-white dark:bg-church-darker shadow-xl absolute w-full top-full left-0 border-t border-gray-100 dark:border-gray-800">
           <div className="px-4 pt-2 pb-6 space-y-2">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.value}
-                onClick={() => {
-                  setPage(link.value);
-                  setIsMobileMenuOpen(false);
-                }}
+                to={getPathFromPage(link.value)}
+                onClick={() => setIsMobileMenuOpen(false)}
                 className={`block w-full text-left px-3 py-3 rounded-md text-base font-medium ${
                   currentPage === link.value
                     ? 'bg-gold-50 dark:bg-gold-900/20 text-gold-600 dark:text-gold-400'
@@ -176,7 +171,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 }`}
               >
                 {link.label}
-              </button>
+              </Link>
             ))}
             
             <div className="border-t border-gray-100 dark:border-gray-800 my-2 pt-2">

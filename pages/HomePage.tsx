@@ -1,14 +1,14 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Calendar, Clock, MapPin, Play, ArrowRight, Heart, Users, Flame, HandHeart } from 'lucide-react';
-import { Language } from '../types';
+import { Language, PageView } from '../types';
 import { getUpcomingEvents, getLatestSermons, getMinistries } from '../constants';
 import { translations } from '../translations';
 import { Logo } from '../components/Logo';
+import { getPathFromPage } from '../routing/routes';
 
 interface HomePageProps {
   language: Language;
-  onNavigateToEvents: () => void;
-  onNavigateToSermons: () => void;
 }
 
 // Helper component for icons in Ministries
@@ -23,11 +23,8 @@ const IconMap: Record<string, React.ElementType> = {
  * HomePage Component
  * Follows SRP - single responsibility for home page display
  */
-export const HomePage: React.FC<HomePageProps> = ({
-  language,
-  onNavigateToEvents,
-  onNavigateToSermons,
-}) => {
+export const HomePage: React.FC<HomePageProps> = ({ language }) => {
+  const navigate = useNavigate();
   const t = translations[language];
 
   return (
@@ -57,13 +54,13 @@ export const HomePage: React.FC<HomePageProps> = ({
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative z-20 px-2">
             <button
-              onClick={onNavigateToEvents}
+              onClick={() => navigate(getPathFromPage(PageView.EVENTS))}
               className="px-6 md:px-8 py-2.5 md:py-3 bg-gold-500 text-white rounded-full font-semibold hover:bg-gold-600 transition-all transform hover:scale-105 shadow-lg shadow-gold-500/30 relative z-20 text-sm md:text-base"
             >
               {t.hero.joinUs}
             </button>
             <button
-              onClick={onNavigateToSermons}
+              onClick={() => navigate(getPathFromPage(PageView.SERMONS))}
               className="px-6 md:px-8 py-2.5 md:py-3 bg-transparent border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-church-dark transition-all relative z-20 text-sm md:text-base"
             >
               {t.hero.watchOnline}
@@ -161,7 +158,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               <h3 className="text-4xl font-serif font-bold">{t.sermons.latest}</h3>
             </div>
             <button
-              onClick={onNavigateToSermons}
+              onClick={() => navigate(getPathFromPage(PageView.SERMONS))}
               className="hidden md:flex items-center gap-2 text-gold-500 hover:text-white transition-colors mt-4 md:mt-0"
             >
               {t.sermons.archive} <ArrowRight size={20} />
@@ -201,7 +198,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
 
           <button
-            onClick={onNavigateToSermons}
+            onClick={() => navigate(getPathFromPage(PageView.SERMONS))}
             className="md:hidden w-full mt-8 py-3 border border-white/20 rounded-lg text-center hover:bg-white/5 transition-colors"
           >
             {t.sermons.watchAll}
