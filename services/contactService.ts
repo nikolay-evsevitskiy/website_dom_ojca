@@ -15,9 +15,9 @@ function getRequiredEnv(name: string): string {
 }
 
 export async function sendContactMessage(payload: ContactMessage): Promise<void> {
-  const serviceId = getRequiredEnv('VITE_EMAILJS_SERVICE_ID');
-  const templateId = getRequiredEnv('VITE_EMAILJS_TEMPLATE_ID');
-  const publicKey = getRequiredEnv('VITE_EMAILJS_PUBLIC_KEY');
+  const serviceId = getRequiredEnv(import.meta.env.VITE_EMAILJS_SERVICE_ID);
+  const templateId = getRequiredEnv(import.meta.env.VITE_EMAILJS_TEMPLATE_ID);
+  const publicKey = getRequiredEnv(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
   // Template variables in EmailJS should match these keys.
   await emailjs.send(
