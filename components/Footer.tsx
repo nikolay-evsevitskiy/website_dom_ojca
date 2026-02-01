@@ -51,11 +51,11 @@ const Footer: React.FC<FooterProps> = ({ language }) => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone size={18} className="text-gold-500" />
-                <span>+48 71 123 45 67</span>
+                <span>+48 576 22 38 78</span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-gold-500" />
-                <span>biuro@domojca.pl</span>
+                <span>poczta@dom-ojca.wroclaw.pl</span>
               </li>
             </ul>
           </div>
